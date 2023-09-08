@@ -22,8 +22,8 @@ async function createWindow() {
 
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 1200,
-    height: 800,
+    width: environment.production ? 700 : 1200,
+    height: environment.production ? 600 : 800,
     webPreferences: {
       devTools: !environment.production,
       contextIsolation: true,
