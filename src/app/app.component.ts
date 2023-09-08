@@ -9,7 +9,7 @@ declare const window: IWindow;
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements AfterContentInit {
-  title = 'secure-electron-angular-template';
+  title = 'bg3-custom-xp-curve';
   private readonly darkModeKey = 'darkMode';
 
   constructor() {}

@@ -1,0 +1,105 @@
+<div class="container">
+  <h2>BG3 Level Curve Editor</h2>
+  <form>
+    <div class="level-grid">
+      <mat-form-field
+        *ngFor="let item of editor.data | keyvalue | slice: 0:(editor.isLevel20 ? 20 : 12)"
+        matTooltip="Default value: {{ item.value }}"
+      >
+        <mat-label>Level {{ item.key }}</mat-label>
+        <input
+          matInput
+          placeholder="{{ item.value }}"
+          [value]="calculateLevelRequirement($any(item.value))">
+      </mat-form-field>
+    </div>
+
+    <div class="slider-grid">
+      <mat-form-field>
+        <mat-label>XP Modifier</mat-label>
+        <input
+          matInput
+          name="xp-modifier"
+          type="number"
+          min="0.1"
+          max="20"
+          step="0.1"
+          [(ngModel)]="editor.xpModifier">
+      </mat-form-field>
+  
+      <mat-slider
+        min="0.1"
+        max="20"
+        step="0.1"
+        matTooltip="Drag slider to change the XP modifier.
+        Use the input to the left to enter a specific value.
+        If you want to level up faster, set the modifier to a value greater than 1.
+        If you want to level up slower, set the modifier to a value less than 1.
+        THIS WILL OVERRIDE ANY MANUAL CHANGES YOU MAKE TO THE XP CURVE!"
+        [discrete]="true"
+        [showTickMarks]="false"
+      >
+        <input
+          matSliderThumb
+          name="xp-modifier"
+          [(ngModel)]="editor.xpModifier">
+      </mat-slider>
+    </div>
+
+    <p>You will level up {{ getPercentageLabel() }}.</p>
+
+    <mat-checkbox
+      [(ngModel)]="editor.isLevel20"
+      name="show-level-20"
+      >
+      Show Level 20
+    </mat-checkbox>
+    
+    <br>
+    
+    <ng-container *ngIf="editor.isLevel20">
+      <mat-form-field matTooltip="Enter the name of your mod here.
+        For example, if you use 'UnlockLevelCurve', then that's what you should enter.
+        The name should match what you see in Vortex.
+        You MUST have a level 20 mod installed if you want to use a custom XP curve for levels 12+."
+      >
+        <mat-label>Level 20 Mod Name</mat-label>
+        <input
+          matInput
+          placeholder="Enter mod name..."
+          name="mod-name"
+          [(ngModel)]="editor.level20ModName">
+      </mat-form-field>
+      
+      <br>
+    </ng-container>
+
+    <p>Game path: {{ editor.isGamePathValid ? editor.gamePath : 'BG3 folder not found. Please select it manually with the button below.' }}</p>
+
+    <button
+      matTooltip="Select the folder where your game is installed."
+      mat-raised-button (click)="openDialog()"
+    >
+    Select game folder</button>
+
+    <div class="action-buttons">
+      <button
+        matTooltip="Apply the current curve to the game. This will overwrite any existing curve."
+        mat-raised-button
+        color="primary"
+        (click)="export()"
+      >
+        Export
+      </button>
+
+      <button
+        matTooltip="Uninstall custom XP from the game."
+        mat-raised-button
+        color="warn"
+        (click)="uninstall()"
+      >
+        Uninstall
+      </button>
+    </div>
+  </form>
+</div>

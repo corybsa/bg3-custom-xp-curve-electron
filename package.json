@@ -1,11 +1,11 @@
 {
-  "name": "secure-electron-angular-template",
-  "version": "1.0.0",
+  "name": "bg3-xp-curve-editor",
+  "version": "2.0.0",
   "main": "./build/main.js",
   "author": {
-    "name": "Your name here"
+    "name": "Cory Sandlin"
   },
-  "description": "Secure Electron Angular template",
+  "description": "BG3 XP Curve Editor",
   "scripts": {
     "ng": "ng",
     "start": "npm run build && electron ./build/main.js",
@@ -18,9 +18,9 @@
     "postinstall": "electron-builder install-app-deps"
   },
   "build": {
-    "appId": "com.example.appname",
-    "productName": "Secure Electron Angular template",
-    "executableName": "secure-electron-angular-template",
+    "appId": "com.wakefulgames.customxpcurve",
+    "productName": "BG3 XP Curve Editor",
+    "executableName": "bg3-xp-curve-editor",
     "linux": {
       "target": [
         "deb",
@@ -28,9 +28,6 @@
         "snap",
         "AppImage"
       ]
-    },
-    "mac": {
-      "category": "your.app.category.type"
     },
     "win": {
       "target": "portable"

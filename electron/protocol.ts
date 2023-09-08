@@ -16,8 +16,8 @@ Implementing a custom protocol achieves two goals:
 import * as fs from 'fs';
 import * as path from 'path';
 
-const DIST_PATH = path.join(__dirname, 'secure-electron-angular-template');
-export const scheme = 'app';
+export const DIST_PATH = path.join(__dirname, 'bg3-custom-xp-curve');
+export const scheme = 'wg';
 
 // Map of file extensions to mime types
 const mimeTypes: { [key: string]: string } = {

@@ -1,14 +1,14 @@
 (taken from [secure-electron-template](https://github.com/reZach/secure-electron-template) because I'm lazy)
-# secure-electron-angular-template
+# bg3-custom-xp-curve
 A current electron app template configured for use with Angular, designed and built with security in mind. (If you are curious about what makes an electron app secure, please check out [this page](https://github.com/reZach/secure-electron-template/blob/master/docs/secureapps.md)).
 
 ## How to get started
-To get started, clone the repository by clicking the [![Use this template](https://github.com/reZach/secure-electron-template/blob/master/docs/imgs/usethistemplate.png "Use this template")](https://github.com/corybsa/secure-electron-angular-template/generate) button, or through the command line (`git clone https://github.com/corybsa/secure-electron-angular-template.git`). 
+To get started, clone the repository by clicking the [![Use this template](https://github.com/reZach/secure-electron-template/blob/master/docs/imgs/usethistemplate.png "Use this template")](https://github.com/corybsa/bg3-custom-xp-curve/generate) button, or through the command line (`git clone https://github.com/corybsa/bg3-custom-xp-curve.git`). 
 
 Once cloned, install the dependencies for the repo by running the following commands (you do _not_ have to run the first command if your command line is already inside the newly cloned repository):
 
 ```
-cd secure-electron-angular-template
+cd bg3-custom-xp-curve
 npm i
 ```
 
@@ -62,7 +62,7 @@ Built-in to this template are a number of popular frameworks already wired up to
 - [Jasmine](https://jasmine.github.io/)
 
 ## Architecture
-For a more detailed view of the architecture of the template, please check out [here](https://github.com/corybsa/secure-electron-angular-template/blob/main/docs/architecture.md). I would _highly_ recommend reading this document to get yourself familiarized with this template.
+For a more detailed view of the architecture of the template, please check out [here](https://github.com/corybsa/bg3-custom-xp-curve/blob/main/docs/architecture.md). I would _highly_ recommend reading this document to get yourself familiarized with this template.
 
 ## FAQ
 **NEW TO ELECTRON?** Please visit [reZach's page](https://github.com/reZach/secure-electron-template/blob/master/docs/newtoelectron.md).
